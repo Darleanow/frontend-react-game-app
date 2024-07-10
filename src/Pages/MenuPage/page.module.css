@@ -1,0 +1,103 @@
+.main_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  font-size: 2.5em;
+}
+
+.select_game {
+  padding: 1.5em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.game_container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.game {
+  padding: 1em 2em;
+  border-radius: 8px;
+  border: 1px solid #808080;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s ease-in;
+  background-color: #31363f;
+  font-size: 1.2em;
+}
+
+.game:hover {
+  border: 1px solid #eeeeee;
+  transition: 0.2s ease-in;
+  background-color: #3b404b;
+}
+
+.score_summary {
+  padding: 1.5em;
+  margin-top: 2em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.score_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.score_card {
+  background-color: #2a2d34;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+}
+
+.score_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+.score_table th,
+.score_table td {
+  padding: 1em;
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+.score_table th {
+  background-color: #3b404b;
+}
+
+.score_table tr:nth-child(even) {
+  background-color: #31363f;
+}
+
+.score_table tr:hover {
+  background-color: #3f4551;
+}
+
+.quit_button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  padding: 1em 3.5em;
+  border-radius: 8px;
+  background-color: #31363f;
+  border: 1px solid #808080;
+  color: white;
+  transition: 0.2s ease-in;
+}
+
+.quit_button:hover {
+  background-color: #3b404b;
+  border: 1px solid #eeeeee;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
