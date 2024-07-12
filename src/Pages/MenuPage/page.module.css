@@ -42,45 +42,6 @@
   font-size: 1.5em;
 }
 
-.score_container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1em;
-}
-
-.score_card {
-  background-color: #2a2d34;
-  padding: 2em;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
-}
-
-.score_table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1em;
-}
-
-.score_table th,
-.score_table td {
-  padding: 1em;
-  text-align: center;
-  border-bottom: 1px solid #555;
-}
-
-.score_table th {
-  background-color: #3b404b;
-}
-
-.score_table tr:nth-child(even) {
-  background-color: #31363f;
-}
-
-.score_table tr:hover {
-  background-color: #3f4551;
-}
-
 .quit_button {
   position: absolute;
   bottom: 0;

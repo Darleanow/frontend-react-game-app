@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./page.module.css";
+import ScoreBoard from "../../Components/ScoreBoard/ScoreBoard";
 
 function MenuPage({ players, scores }) {
+  const [loadedPlayers, setLoadedPlayers] = useState(players);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!players.player1 || !players.player2) {
+      const savedPlayers = localStorage.getItem("players");
+      if (savedPlayers) {
+        setLoadedPlayers(JSON.parse(savedPlayers));
+      } else {
+        navigate("/");
+      }
+    }
+  }, [players, navigate]);
 
   const handleQuit = () => {
     navigate("/");
@@ -25,28 +38,7 @@ function MenuPage({ players, scores }) {
       </div>
       <div>
         <h2 className={styles.score_summary}>Score Summary</h2>
-        <div className={styles.score_container}>
-          <div className={styles.score_card}>
-            <table className={styles.score_table}>
-              <thead>
-                <tr>
-                  <th>Game</th>
-                  <th>{players.player1}</th>
-                  <th>{players.player2}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Object.keys(scores).map((game) => (
-                  <tr key={game}>
-                    <td>{game}</td>
-                    <td>{scores[game]?.[players.player1] || 0}</td>
-                    <td>{scores[game]?.[players.player2] || 0}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <ScoreBoard players={loadedPlayers} scores={scores} />
       </div>
       <button onClick={handleQuit} className={styles.quit_button}>
         Quit

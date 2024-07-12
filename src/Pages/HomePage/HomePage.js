@@ -17,9 +17,9 @@ function HomePage({ setPlayers }) {
     if (player1Name && player2Name) {
       setPlayers({ player1: player1Name, player2: player2Name });
       navigate("/menu");
+    } else {
+      setErrorMessage("Both player names are required.");
     }
-
-    setErrorMessage("Both player names are required.");
   };
 
   return (

@@ -12,11 +12,21 @@ import RockPaperScissors from "./Components/RockPaperScissors/RockPaperScissors"
 import "./App.css";
 
 function App() {
-  const [players, setPlayers] = useState({ player1: "", player2: "" });
+  const [players, setPlayers] = useState(() => {
+    const savedPlayers = localStorage.getItem("players");
+    return savedPlayers
+      ? JSON.parse(savedPlayers)
+      : { player1: "", player2: "" };
+  });
+
   const [scores, setScores] = useState(() => {
     const savedScores = localStorage.getItem("scores");
     return savedScores ? JSON.parse(savedScores) : {};
   });
+
+  useEffect(() => {
+    localStorage.setItem("players", JSON.stringify(players));
+  }, [players]);
 
   useEffect(() => {
     localStorage.setItem("scores", JSON.stringify(scores));
